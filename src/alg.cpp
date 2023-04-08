@@ -28,6 +28,7 @@ int ChToInt(char str) {
   for (int i = 0; i < 10; i++) {
     if (str == mas[i]) return i;
   }
+  return 1;
 }
 
 std::string infx2pstfx(std::string inf) {
