@@ -7,8 +7,6 @@
 
 template<typename T>
 class TStack {
-  template <typename T>
-class TStack {
  private:
   struct Item {
     T item;
@@ -18,7 +16,7 @@ class TStack {
   TStack::Item* create(const T&);
 
  public:
-  TStack() : head(nullptr){};
+  TStack() {head = nullptr;}
   bool isEmpty();
   void push(T);
   void pop();
@@ -27,7 +25,6 @@ class TStack {
   void delNext();
   ~TStack();
 };
-  
 template<typename T>
 typename TStack<T>::Item* TStack<T>::create(const T& value) {
   Item* temp = new Item;
