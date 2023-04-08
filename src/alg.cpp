@@ -37,17 +37,18 @@ std::string infx2pstfx(std::string inf) {
   for (int i = 0; i < inf.length(); i++) {
     if (isNum(inf[i])) {
       rez = rez + inf[i] + ' ';
-    } else if (inf[i] == '(')
+    } else if (inf[i] == '(') {
       stack.push(inf[i]);
-    else if (isOper(inf[i])) {
+    } else if (isOper(inf[i])) {
       stack.push(inf[i]);
       if (isOper(stack.getNext())) {
         if (PrioritySym(inf[i]) >= PrioritySym(stack.getNext())) {
           rez = rez + stack.getNext() + ' ';
           stack.delNext();
         }
-      } else if (i == inf.length() - 1)
+      } else if (i == inf.length() - 1) {
         rez = rez + stack.getItem();
+      }
     } else if (inf[i] = ')') {
       while (stack.getItem() != '(') {
         rez = rez + stack.getItem() + ' ';
